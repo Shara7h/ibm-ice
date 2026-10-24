@@ -285,9 +285,31 @@ div[data-testid="stFileUploaderDropzoneInstructions"] * {
 }
 
 div[data-testid="stDataFrame"] {
-    border-radius: 12px;
+    background-color: #111827 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 12px !important;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+div[data-testid="stDataFrame"] [data-testid="stDataFrameResizable"] {
+    background-color: #111827 !important;
+}
+
+div[data-testid="stDataFrame"] table {
+    background-color: #111827 !important;
+    color: #F8FAFC !important;
+}
+
+div[data-testid="stDataFrame"] th {
+    background-color: #1E293B !important;
+    color: #38BDF8 !important;
+    border: 1px solid #334155 !important;
+}
+
+div[data-testid="stDataFrame"] td {
+    background-color: #111827 !important;
+    color: #F8FAFC !important;
+    border: 1px solid #1E293B !important;
 }
 
 .stButton>button {
@@ -462,6 +484,14 @@ if uploaded_file:
     </div>
     """, unsafe_allow_html=True)
 
+    def style_table(data):
+        if isinstance(data, list):
+            data = pd.DataFrame(data)
+        return data.style.set_properties(**{
+            'background-color': '#111827',
+            'color': '#F8FAFC',
+        })
+
     # ---------- BEFORE / AFTER ----------
     st.markdown("""
     <div>
@@ -479,7 +509,7 @@ if uploaded_file:
             <span style="color:#94A3B8; font-size:12px; font-family:'JetBrains Mono';">{raw_df.shape[0]} rows</span>
         </div>
         """, unsafe_allow_html=True)
-        st.dataframe(raw_df, use_container_width=True, height=450)
+        st.dataframe(style_table(raw_df), use_container_width=True, height=450)
 
     with col2:
         st.markdown(f"""
@@ -488,7 +518,7 @@ if uploaded_file:
             <span style="color:#94A3B8; font-size:12px; font-family:'JetBrains Mono';">{clean_df.shape[0]} rows</span>
         </div>
         """, unsafe_allow_html=True)
-        st.dataframe(clean_df, use_container_width=True, height=450)
+        st.dataframe(style_table(clean_df), use_container_width=True, height=450)
 
     st.write("")
 
@@ -543,7 +573,7 @@ if uploaded_file:
     """, unsafe_allow_html=True)
 
     if history:
-        st.dataframe(pd.DataFrame(history), use_container_width=True, height=350)
+        st.dataframe(style_table(history), use_container_width=True, height=350)
     else:
         st.info("No cleaning transformations were necessary — dataset is pristine.")
 
@@ -557,7 +587,7 @@ if uploaded_file:
     </div>
     """, unsafe_allow_html=True)
     st.caption(f"Fully Encoded & Scaled: **{ml_df.shape[0]} rows × {ml_df.shape[1]} numeric columns** — 0 nulls, model.fit() ready")
-    st.dataframe(ml_df, use_container_width=True, height=350)
+    st.dataframe(style_table(ml_df), use_container_width=True, height=350)
 
     if ml_log:
         with st.expander("🛠️ View Feature Transformation Log"):
