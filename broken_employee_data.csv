@@ -1,0 +1,11 @@
+First Name,Age,Gender,Salary,Joining Date,Department
+Harshitha,23,Female,45000,12/05/2025,IT
+Rahul,twenty-five,male,50000,2025-06-10,HR
+Priya,,FEMALE,55000,15-Jun-2025,IT
+Amit,30,Male,999999999,2025/07/01,Finance
+Harshitha,23,Female,45000,12/05/2025,IT
+Sneha,-5,Female,40000,2025-08-15,HR
+Kiran,28,Male,,20/09/2025,IT
+Ravi,35,male,60000,2025-10-01, Finance
+Anjali,150,Female,70000,2025-11-05,IT
+,,Unknown,30000,invalid_date,HR

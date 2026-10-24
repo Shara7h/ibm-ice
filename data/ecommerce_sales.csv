@@ -1,0 +1,26 @@
+Order ID,Customer Name,Order Date,Product Category,Quantity,Price ($),Discount %,Total Revenue
+ORD-1001,Acme Corp,2023-10-01,Electronics,10,299.99,0,2999.90
+ORD-1002,Beta LLC,10/02/2023,Home,5,49.50,10,222.75
+ORD-1003,Gamma Inc,Oct 3, 2023,,15.00,0,Missing qty
+ORD-1004,Delta Co,2023-10-04,Electronics,99999,299.99,0,Data entry error
+ORD-1005,Epsilon,05/10/2023,Apparel,2,25.00,5,47.50
+ORD-1006,Zeta Corp,2023-10-06,Home,1,-50.00,0,Negative price
+ORD-1007,Eta LLC,Oct 7, 2023,Electronics,,199.99,0,Missing qty
+ORD-1008,Theta Inc,2023-10-08,Apparel,3,35.00,100,Free items?
+ORD-1009,Iota Co,10/09/2023,Home,Ten,49.50,0,Text in qty
+ORD-1010,Kappa,2023-10-10,Electronics,20,299.99,,Missing discount
+ORD-1011,Acme Corp,2023-10-01,Electronics,10,299.99,0,Duplicate row
+ORD-1012,Beta LLC,10/02/2023,Home,5,49.50,10,Duplicate row
+ORD-1013,Lambda,2023-10-11,,2,25.00,5,Missing category
+ORD-1014,Mu Corp,Oct 12, 2023,Apparel,500,35.00,0,High qty outlier
+ORD-1015,Nu LLC,2023-10-13,Electronics,1,99999.99,0,High price outlier
+ORD-1016,Xi Inc,10/14/2023,Home,4,49.50,0,
+ORD-1017,Omicron,2023-10-15,Apparel,6,,0,Missing price
+ORD-1018,Pi Co,Oct 16, 2023,Electronics,2,299.99,10,
+ORD-1019,Rho,2023-10-17,Home,8,49.50,0,
+ORD-1020,Sigma LLC,10/18/2023,,10,15.00,0,Missing category
+ORD-1021,Tau Inc,2023-10-19,Apparel,3,35.00,5,
+ORD-1022,Upsilon,Oct 20, 2023,Electronics,1,299.99,0,
+ORD-1023,Phi Co,2023-10-21,Home,12,49.50,,Missing discount
+ORD-1024,Chi LLC,10/22/2023,Apparel,4,35.00,0,
+ORD-1025,Psi Inc,2023-10-23,Electronics,999999,299.99,0,Massive outlier
